@@ -12,7 +12,7 @@ const Category = props => {
             <div>{props.price} </div>
             {props.popular === true && (
               <div>
-                <span class="margin-left"> Populaire</span>
+                <span class="margin-left text-green"> Populaire</span>
               </div>
             )}
           </div>
