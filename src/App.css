@@ -9,10 +9,13 @@
 
 .flex-left {
   flex: 2;
+  margin-top: 15px;
 }
 
 .flex-right {
   flex: 1;
+  background: lightgrey;
+  margin-top: 15px;
 }
 
 .main-img {

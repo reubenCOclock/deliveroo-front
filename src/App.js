@@ -5,10 +5,12 @@ import "./App.css";
 import Menu from "./components/Menu";
 import Category from "./components/Category";
 import Header from "./components/Header";
+import Basket from "./components/Basket";
 
 function App() {
   const [restaurauntData, setRestaurauntData] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
+  const [basketItems, setBasketItems] = useState([]);
   useEffect(() => {
     let getData = async () => {
       const data = await axios.get(
@@ -21,7 +23,7 @@ function App() {
     getData();
   }, []);
   if (isLoading == true) {
-    console.log(restaurauntData.data);
+    //console.log(restaurauntData.data);
   }
   return (
     <>
@@ -34,11 +36,20 @@ function App() {
             {isLoading === false ? <div> Data Loading</div> : <span></span>}
             {isLoading === true && (
               <>
-                <Menu array={restaurauntData.data.categories} />
+                <Menu
+                  array={restaurauntData.data.categories}
+                  basketItems={basketItems}
+                  setBasketItems={setBasketItems}
+                />
               </>
             )}
           </div>
-          <div className="flex-right"></div>
+          <div className="flex-right">
+            <Basket
+              basketArray={basketItems}
+              setBasketArrayItems={setBasketItems}
+            />
+          </div>
         </div>
       </div>
     </>

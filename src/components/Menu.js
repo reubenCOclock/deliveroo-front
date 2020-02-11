@@ -14,11 +14,15 @@ const Menu = props => {
                 {element.meals.map(function(meal, index) {
                   return (
                     <Category
+                      index={index}
+                      element={element}
                       title={meal.title}
                       description={meal.description.substring(0, 50)}
                       price={meal.price}
                       popular={meal.popular}
                       picture={meal.picture}
+                      basketItems={props.basketItems}
+                      setBasketItems={props.setBasketItems}
                     />
                   );
                 })}

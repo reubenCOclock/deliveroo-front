@@ -4,7 +4,33 @@ import "./components.css";
 const Category = props => {
   return (
     <>
-      <div className="card">
+      <div
+        className="card"
+        onClick={() => {
+          let basketItemsCopy = [...props.basketItems];
+
+          let same = false;
+
+          for (let j = 0; j < basketItemsCopy.length; j++) {
+            if (
+              basketItemsCopy[j].title == props.element.meals[props.index].title
+            ) {
+              same = true;
+              basketItemsCopy[j].qty++;
+              props.setBasketItems(basketItemsCopy);
+            }
+          }
+
+          if (same == false) {
+            basketItemsCopy.push({
+              qty: 1,
+              title: props.title,
+              price: props.price
+            });
+            props.setBasketItems(basketItemsCopy);
+          }
+        }}
+      >
         <div className="collection-flex">
           <h4>{props.title}</h4>
           <p>{props.description}</p>
