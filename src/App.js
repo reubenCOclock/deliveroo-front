@@ -27,10 +27,14 @@ function App() {
   }
   return (
     <>
+      {isLoading === true && (
+        <div className="bg-white">
+          <div className="container">
+            <Header restarauntName={restaurauntData.data.restaurant.name} />
+          </div>
+        </div>
+      )}
       <div className="container">
-        {isLoading === true && (
-          <Header restarauntName={restaurauntData.data.restaurant.name} />
-        )}
         <div className="flex-items">
           <div className="flex-left">
             {isLoading === false ? <div> Data Loading</div> : <span></span>}

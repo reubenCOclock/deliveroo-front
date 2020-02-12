@@ -56,7 +56,7 @@ const Basket = props => {
         <hr></hr>
         <div class="flex-items-basket-space-between margin-top">
           <div> Sous Total</div>
-          <div>{total}</div>
+          <div>{Math.round(total)}</div>
         </div>
         <div class="flex-items-basket-space-between margin-top">
           <div> Frais de Livraison</div>
@@ -66,7 +66,7 @@ const Basket = props => {
         <hr></hr>
         <div class="flex-items-basket-space-between">
           <div> Total</div>
-          <div>{total + 2.5}</div>
+          <div>{Math.round(total) + 2.5}</div>
         </div>
       </div>
     </div>
