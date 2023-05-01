@@ -9,6 +9,7 @@ import Basket from "./components/Basket";
 
 function App() {
   console.log("I am modifying the front end of this application!");
+  console.log("I am going to push with the correct access rights!")
   const [restaurauntData, setRestaurauntData] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
   const [basketItems, setBasketItems] = useState([]);
