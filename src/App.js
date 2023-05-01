@@ -9,6 +9,7 @@ import Basket from "./components/Basket";
 
 function App() {
   console.log("Push with no access rights");
+  console.log("Push with correct access rights");
   const [restaurauntData, setRestaurauntData] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
   const [basketItems, setBasketItems] = useState([]);
