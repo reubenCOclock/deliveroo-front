@@ -8,6 +8,7 @@ import Header from "./components/Header";
 import Basket from "./components/Basket";
 
 function App() {
+  console.log("I am modifying the front end of this application!");
   const [restaurauntData, setRestaurauntData] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
   const [basketItems, setBasketItems] = useState([]);
